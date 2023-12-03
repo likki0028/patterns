@@ -1,40 +1,43 @@
 #include<stdio.h>
 int main()
 {
-    int n,mid,i,j;
-    printf("Enter no.of rows :");
+    int n,mid,i,j,s;
+    printf("Enter no of rows :");
     scanf("%d",&n);
+    mid=n/2+1;
     if(n%2==0)
-    printf("Pattern is not possible");
-    else
-    {
-        for(i=1;i<=n;i++)
+    {   
+            printf("pattern not possible");
+        }
+        else
         {
-            mid=(n+1)/2;
+            for(i=1;i<=n;i++)
+        {
             if(i<=mid)
             {
-                for(int s1=1;s1<=mid-i;s1++)
+                for(s=1;s<=(mid-i);s++)
                 {
                     printf(" ");
                 }
-                for( j=1;j<=(2*i-1);j++)
+                for(j=1;j<=2*i-1;j++)
                 {
                     printf("*");
                 }
             }
-            else
+            else 
             {
-                for(int s2=1;s2<=i-mid;i++)
+                for(s=1;s<=i-mid;s++)
                 {
-                    printf(" ");
+                 printf(" ");
                 }
-                for(j=1;j<=(2*(n-i))+1;j++)
+            int f=2*(n-i)+1;
+                for(j=1;j<=f;j++)
                 {
                     printf("*");
                 }
-            }
+            }   
+            printf("\n");
         }
-        printf("\n");
     }
     return 0;
 }
